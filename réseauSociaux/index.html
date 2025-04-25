@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réseaux sociaux</title>
+    <link rel="stylesheet" href="style/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="mainFrame">
+        
+        <!-- Affichage heure et date -->
+        <div class="statusBar">
+            <span id="time"></span>
+            <span id="date"></span>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="./social/insta.html"><img src="./public/icons/Instagram.png" alt=""></a></li>
+                <li><a href="./social/whatsapp.html"><img src="./public/icons/whatsapp.png" alt=""></a></li>
+                <li><a href="./social/snap.html"><img src="./public/icons/snapchat.png" alt=""></a></li>
+                <li><a href="./social/tiktok.html"><img src="./public/icons/tiktok.png" alt=""></a></li>
+            </ul>
+        </nav>
+    </main>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const day = now.toLocaleDateString('fr-FR', { weekday: 'short', day: 'numeric', month: 'short' });
+
+            document.getElementById('time').textContent = `${hours}:${minutes}`;
+            document.getElementById('date').textContent = `${day}`;
+        }
+
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</body>
+</html>
